@@ -1,0 +1,25 @@
+{
+  "name": "vue-oa",
+  "version": "1.0.0",
+  "description": "vue 搭建oa系统",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-cli": "^2.9.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxxihqt/vue-oa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xxxihqt/vue-oa/issues"
+  },
+  "homepage": "https://github.com/xxxihqt/vue-oa#readme"
+}
