@@ -2,7 +2,7 @@
   <div class="register">
     <section class="form_container">
         <div class="manage_tip">
-            <span class="title">Vue在线后台管理系统</span>
+            <span class="title">Vue在线后台管理系统-注册 </span>
             <el-form :model="registerUser" status-icon :rules="rules" ref="registerForm" label-width="80px" class="registerForm">
                 <el-form-item label="用户名" prop="name">
                     <el-input type="text" v-model="registerUser.name" autocomplete="off" placeholder="请输入用户名"></el-input>
@@ -108,6 +108,22 @@
     .register{
         height: 100%;
         width: 100%;
-        background:skyblue;
+        background:#324057;
+        color:white;
+        position: relative;
+    }
+    .form_container{
+        width: 400px;
+        height:400px;
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        margin:auto;
+    }
+    .title{
+        display: block;
+        margin-bottom:30px;
     }
 </style>

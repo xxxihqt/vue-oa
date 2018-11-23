@@ -11,11 +11,14 @@ function startLoading(){
 }
 
 function closeLoading(){
-    loading=Loading.close();
+    loading && loading.close();
 }
 
+
+  
 //请求拦截
 axios.interceptors.request.use(config=>{
+    console.log('start')
     startLoading();
     return config;
 },error=>{
@@ -24,8 +27,11 @@ axios.interceptors.request.use(config=>{
 
 //响应拦截
 axios.interceptors.response.use(response=>{
+    console.log(response)
+
     closeLoading();
     return response;
+
 },error=>{
     closeLoading();
     Message.error(error.response.data);

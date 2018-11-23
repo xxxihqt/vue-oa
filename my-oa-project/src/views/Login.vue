@@ -1,16 +1,16 @@
 <template>
-  <div class="register">
+  <div class="login">
     <section class="form_container">
         <div class="manage_tip">
-            <span class="title">Vue在线后台管理系统</span>
+            <span class="title">Vue在线后台管理系统-登录</span>
             <el-form :model="loginUser" status-icon :rules="rules" ref="loginForm" label-width="100px" class="loginForm">
-                <el-form-item label="邮箱" prop="email">
+                <el-form-item label="邮箱" prop="email"  class="con">
                     <el-input type="email" v-model="loginUser.email" autocomplete="off"  placeholder="请输入邮箱"></el-input>
                 </el-form-item>
-                <el-form-item label="密码" prop="password">
+                <el-form-item label="密码" prop="password" class="con">
                     <el-input type="password" v-model="loginUser.password" autocomplete="off"  placeholder="请输入密码"></el-input>
                 </el-form-item>
-                <el-form-item label="选择身份" >
+                <el-form-item label="选择身份" class="con" >
                     <el-select type="password" v-model="loginUser.identity" autocomplete="off"  placeholder="请选择身份">
                         <el-option label="管理员" value="manager"></el-option>
                         <el-option label="员工" value="employee"></el-option>
@@ -32,7 +32,7 @@
 <script>
 
   export default {
-    name:'register',
+    name:'login',
     props:[''],
     data () {
         var validatePass2 = (rule, value, callback) => {
@@ -89,9 +89,26 @@
 
 </script>
 <style lang='scss' scoped>
-    .register{
+    .login{
         height: 100%;
         width: 100%;
-        background:skyblue;
+        background:#324057;
+        color:white;
+        position: relative;
+
+    }
+    .form_container{
+        width: 400px;
+        height:400px;
+        position: absolute;
+        left:0;
+        top:0;
+        bottom:0;
+        right:0;
+        margin:auto;
+    }
+    .title{
+        display: block;
+        margin-bottom:30px;
     }
 </style>
