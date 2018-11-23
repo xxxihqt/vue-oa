@@ -19,7 +19,7 @@
         <el-form-item >
           <el-button type="primary" size="small" @click="handleSearch">筛选</el-button>
         </el-form-item>
-        <el-form-item class="btnRight">
+        <el-form-item class="btnRight" v-if="identity=='manager'">
           <el-button type="primary" size="small" @click="handleAdd">添加</el-button>
         </el-form-item>
       </el-form>
@@ -80,7 +80,8 @@
           label="操作"
           prop="operation"
           align="center"
-          width="180">
+          width="180"
+          v-if="identity=='manager'">
           <template slot-scope="scope">
             <el-button
               size="mini"
@@ -147,7 +148,8 @@
           show:false,
           title:'',
           option:'edit'
-        }
+        },
+        identity:''
       };
     },
 
@@ -173,6 +175,7 @@
       getdata(){
         this.$axios.get('https://www.apiopen.top/meituApi?page=1')
           .then(res=>{
+            this.identity=localStorage.getItem('identity');
             this.allTableData=res.data.data;
             this.allTableData.map((item,idx)=>{
               item.price=300;

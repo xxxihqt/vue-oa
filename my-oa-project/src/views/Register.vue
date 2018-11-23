@@ -89,11 +89,16 @@
            console.log(formName);
         this.$refs[formName].validate((valid) => {
           if (valid) {
-                localStorage.setItem('email',this.loginUser.email);
+               this.$message({
+                    message: '恭喜你，已注册成功',
+                    type: 'success'
+                });
+                localStorage.setItem('email',this.registerUser.email);
+                localStorage.setItem('indentity',this.registerUser.indentity);
                 this.$router.push({path:'/login'});
           } else {
-            console.log('error submit!!');
-            return false;
+                this.$message.error('注册失败');
+                return false;
           }
         });
       }

@@ -46,6 +46,7 @@
           loginUser:{
               email:'',
               password:'',
+              identity:''
           },
           rules:{
               email:[{
@@ -73,11 +74,16 @@
            console.log(formName);
         this.$refs[formName].validate((valid) => {
           if (valid) {
-              localStorage.setItem('email',this.loginUser.email);
+               this.$message({
+                    message: '恭喜你，登录成功',
+                    type: 'success'
+                });
+                localStorage.setItem('email',this.loginUser.email);
+                localStorage.setItem('identity',this.loginUser.identity);
                 this.$router.push({path:'/index'});
           } else {
-            console.log('error submit!!');
-            return false;
+                this.$message.error('登录失败');
+                return false;
           }
         });
       }
